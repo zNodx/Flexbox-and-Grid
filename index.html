@@ -8,36 +8,45 @@
         div{
             border: solid 5px dodgerblue;
             font-size: 40px;
-            margin: 5px;
         }
         
-        .big {
-            font-size: 1.5em;
+
+        .flex-container div {
+            box-sizing: border-box;
         }
 
-        .flex-container {
+        .flex-container{
             display: flex;
-            flex-direction: row;
-            width: 50%;
-            flex-wrap: wrap;
-            flex-flow: row wrap;
-
-            justify-content: flex-start;
-            justify-content: center;
-            justify-content: space-around;
-            justify-content: space-between;
-
-            height: 400px;
-
-            /*cross Axis*/
-            align-items: stretch;
-            align-items: baseline;
-            align-items: flex-start;
-            align-items: center;
-
-            /*mais de uma linha*/
-            align-content:space-around;
+            height: 300px;
+            width: 600px;
         }
+
+        .flex-container div:nth-child(3){
+            background-color: indianred;
+            order:1;
+            order:0;
+            order:-1;
+            align-self: center;
+            align-self: flex-end;
+            align-self: flex-start;
+            align-self: stretch
+        }
+        .flex-container div {
+            width: 100px;
+            flex-grow: 1;
+        }
+        .flex-container div:nth-child(1){
+            flex-grow: 2;
+        }
+
+        .flex-container{
+            width: 300px;
+            flex-shrink: 1;
+        }
+        .flex-container div:nth-child(1){
+            flex-shrink: 5;
+        }
+
     </style>
     <title>Mateus Véinho</title>
 </head>
@@ -45,14 +54,8 @@
     <div class="flex-container">
         <div>1</div>
         <div>2</div>
-        <div class="big">3</div>
+        <div>3</div>
         <div>4</div>
-        <div>5</div>
-        <div>6</div>
-        <div>7</div>
-        <div>8</div>
-        <div>9</div>
-        <div>10</div>
-    </div>
+
 </body>
 </html>
