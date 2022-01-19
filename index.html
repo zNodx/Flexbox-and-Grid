@@ -4,47 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/tag.css">
     <style>
-        html,
-        body{
-            margin: 20px;
-            height: calc(100% - 40px);
-            background-color: lightgray;
+        *{
+            padding: 0;
+            margin: 0;
         }
 
-        div{
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            border: solid 5px dodgerblue;
-            background-color: #FFF ;
+        header{
+            grid-area: cabecalho
         }
 
-        body {
-            display: grid;
-            grid-template-columns: 
-            [inicio] 1fr 
-            [metade-1 meio-1]1fr 
-            [metade-2 meio-2]1fr [fim];
-            grid-template-rows: repeat(3,1fr);
-            gap: 20px 20px;
+        nav {
+            grid-area: navegacao
         }
         
-        .d1{
-            grid-column-start: metade-2;
-            grid-column-end: fim;
-            grid-column: meio-1 / fim;
-            grid-row: 1 / span 2;
-            grid-area: 1/ meio-1/ span 3 / fim
+        main {
+            grid-area: conteudo;
+        }
+
+        footer{
+            grid-area: rodape;
+        }
+
+        body{
+            display: grid;
+            min-height: 100vh;
+            grid-template-columns: 300px 1fr;
+            grid-template-rows: 100px 1fr 100px;
+            grid-template-areas:
+                'cabecalho cabecalho'
+                'navegacao conteudo'
+                'rodape rodape'
+            ;
+        }
+
+        @media(max-width: 700px){
+            body{
+                grid-template-columns: 1fr;
+                grid-template-rows: 80px 1fr 100px;
+                grid-template-areas: 
+                    'navegacao'
+                    'conteudo'
+                    'rodape'
+                    ;
+            }
+            header {display: none;}
         }
     </style>
     <title>Mateus Véinho</title>
 </head>
 <body>
-        <div class="d1">1</div>
-        <div class="d2">2</div>
-        <div class="d3">3</div>
-
+        <main class="tag">CONTEÚDO</main>
+        <header class="tag">CABEÇALHO</header>
+        <footer class="tag">RODAPÉ</footer>
+        <nav class="tag">NAVEGAÇÂO</nav>
+    <script src="js/tag.js"></script>
 </body>
 </html>
